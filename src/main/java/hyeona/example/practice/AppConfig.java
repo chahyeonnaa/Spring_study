@@ -2,6 +2,7 @@ package hyeona.example.practice;
 
 import hyeona.example.practice.discount.DiscountPolicy;
 import hyeona.example.practice.discount.FixDiscountPolicy;
+import hyeona.example.practice.discount.RateDiscountPolicy;
 import hyeona.example.practice.member.MemberRepository;
 import hyeona.example.practice.member.MemberService;
 import hyeona.example.practice.member.MemberServiceImpl;
@@ -26,7 +27,7 @@ public class AppConfig {
     }
 
     private static DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 
