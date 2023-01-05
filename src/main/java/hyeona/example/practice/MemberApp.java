@@ -4,13 +4,19 @@ import hyeona.example.practice.member.Grade;
 import hyeona.example.practice.member.Member;
 import hyeona.example.practice.member.MemberService;
 import hyeona.example.practice.member.MemberServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberApp {
 
     public static void main(String[] args) {
 
-        AppConfig appConfig = new AppConfig();
-        MemberService memberService = appConfig.memberService();
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = ac.getBean("memberService", MemberService.class);
+
+//        AppConfig appConfig = new AppConfig();
+//        MemberService memberService = appConfig.memberService();
 
         Member member = new Member("memberA", 1L, Grade.VIP);
 
