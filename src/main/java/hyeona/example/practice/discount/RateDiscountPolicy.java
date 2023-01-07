@@ -2,7 +2,9 @@ package hyeona.example.practice.discount;
 
 import hyeona.example.practice.member.Grade;
 import hyeona.example.practice.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent=10;
